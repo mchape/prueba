@@ -22,12 +22,13 @@
 </p>
 <script>
   function maxw() {
+  let theYear, maxWave;
   console.log('about to fecth'); 
   fetch("https://europe-west1-freesolarcalc.cloudfunctions.net/wave_max/?lat=" + document.getElementById('lat').value + "&lon=" + document.getElementById('lon').value)
   .then(response => response.json())
   .then(data => {
-  console.log(data)
-  document.querySelector("#result").innerText = valueOf(data)
+  console.log(data[0].2009);
+  document.querySelector("#result").innerText = JSON.parse(data);
 })  
   }
 </script> 

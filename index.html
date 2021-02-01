@@ -27,8 +27,8 @@
   fetch("https://europe-west1-freesolarcalc.cloudfunctions.net/wave_max/?lat=" + document.getElementById('lat').value + "&lon=" + document.getElementById('lon').value)
   .then(response => response.json())
   .then(data => {
-  console.log(data.keys)
-  document.querySelector("#result").innerText = data.keys
+  console.log(data)
+  document.querySelector("#result").innerText = data
 })  
   }
 </script> 

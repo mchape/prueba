@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Glint Case</title>
+</head>
+
+<body>
+
+<!-- https://europe-west1-freesolarcalc.cloudfunctions.net/wave_max/?lat=90.0&lon=1.3 -->
+<p>This is the case for Glint Solar.</p> 
+<p>Author: Miguel Chapela</p>
+  
+<p><form action="PayslipServlet" method="get">
+          Latitude:    <input type="text" name="lat" id="lat"><br/>
+          Longitude:   <input type="text" name="lon" id="lon"><br/>
+          Max Wave height: <span id="result"></span>
+          <br>
+          <input type="button" value="Submit" onClick="maxw()">
+</form>
+</p>
+<script>
+  console.log('about to fecth'); 
+  fetch("https://europe-west1-freesolarcalc.cloudfunctions.net/wave_max/?lat=" + document.getElementById('lat').value + "&lon=" + document.getElementById('lon').value)
+  then(response => {
+  console.log(response);
+  });
+</script> 
+
+</body>
+</html>
